@@ -1,0 +1,4 @@
+Load scheme into mysql workbench/xampp whatever
+Password is password
+user is root
+domains localhost
