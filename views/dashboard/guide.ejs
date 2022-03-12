@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     p{
       margin-bottom: 10%;
@@ -134,34 +135,34 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-xl-12 col-lg-12" style="color:lightgrey">
-              <h2>Hello welcome to GrowUp portfolio</h2>
-              <h3>How it shall work</h3>
-              <p>We made this simple guide to show you how to get your own online portfolio! <br> You have already registered, and probably see no Preview yet, this is because you have no made a portfolio yet</p>
-              <img src="/img/userprofile.PNG" alt="userprofile" >
-              <p>You can make a portfolio by clicking on User profile on the top left corner <br> Now you will see a form First lets discuss how to fill the form</p>
+            <div class="col-xl-12 col-lg-12" style="color:lightgrey" data-aos="fade-right">
+              <h2 data-aos="fade-right">Hello welcome to GrowUp portfolio</h2>
+              <h3 data-aos="fade-right">How it shall work</h3>
+              <p data-aos="fade-right">We made this simple guide to show you how to get your own online portfolio! <br> You have already registered, and probably see no Preview yet, this is because you have no made a portfolio yet</p>
+              <img src="/img/userprofile.PNG" class="" alt="userprofile" data-aos="fade-right">
+              <p data-aos="fade-right">You can make a portfolio by clicking on User profile on the top left corner <br> Now you will see a form First lets discuss how to fill the form</p>
               <hr>
-              <h3>Form filling</h3>
-              <img src="/img/namdomain.PNG" alt="Name and domain">
-              <p>Enter your name and the domain (the name in www.name.com is an example) you want here, domain only has to be entered once and must not be taken</p>
-              <img src="/img/designation3.PNG" alt="Designation webdesign">
-              <p>Put 3 alternating sentences here they will show up here</p>
-              <img src="/img/3post.PNG" alt="Designation webdesign">
-              <p>The animation will cycle through all 3 posts (1 is required)</p>
-              <img src="/img/socials.PNG" alt="Social media input">
-              <p>Here you can input your social username for example </p>
-              <img src="/img/facebook.png" alt="facebook username meta">
-              <p>Here perccyt would be the username</p>
-              <img src="/img/addrem.PNG" alt="Plus minus elements">
-              <p>You may see these icons around these esentially allow you to Add or remove corresponding fields</p>
-              <img src="/img/achievements.PNG" alt="Achievement gallery">
-              <p>Such as above, We have added 2 more fields/slots/additions to our gallery this gallery may be used for pictures that you believe should be showcased such as achievements <br> Feel free to be diverse or creative with what you enter, we wont limit you</p>
-              <h3>I have filled the form now what?</h3>
-              <p>Now please make a payment (you can find payment methods on our dashboard) and if possible add your email or domain name selected in the payment</p>
-              <img src="/img/receiptinput.PNG" alt="Receipt payment integration">
-              <p>Then proceed to take a picture or screenshot of the receipt and upload it in the designated area then press save</p>
-              <img src="/img/status.PNG" alt="status shift green" style="width: 100%;">
-              <p>We will confirm the email and change you status from yellow (pending) to green and you shall be provided a link corresponding to your chosen domain thats all you can now share your portfolio with everyone!</p>
+              <h3 data-aos="fade-right">Form filling</h3>
+              <img src="/img/namdomain.PNG" class="guideimg2" alt="Name and domain" data-aos="fade-right">
+              <p data-aos="fade-right">Enter your name and the domain (the name in www.name.com is an example) you want here, domain only has to be entered once and must not be taken</p>
+              <img src="/img/designation3.PNG" class="guideimg2" alt="Designation webdesign" data-aos="fade-right">
+              <p data-aos="fade-right">Put 3 alternating sentences here they will show up here</p>
+              <img src="/img/3post.PNG" class="guideimg" alt="Designation webdesign" data-aos="fade-right">
+              <p data-aos="fade-right">The animation will cycle through all 3 posts (1 is required)</p>
+              <img src="/img/socials.PNG" class="guideimg2" alt="Social media input" data-aos="fade-right" data-aos="fade-right">
+              <p data-aos="fade-right">Here you can input your social username for example </p>
+              <img data-aos="fade-right" class="guideimg" src="/img/facebook.png" alt="facebook username meta">
+              <p data-aos="fade-right">Here perccyt would be the username</p>
+              <img data-aos="fade-right" class="guideimg" src="/img/addrem.PNG" alt="Plus minus elements">
+              <p data-aos="fade-right">You may see these icons around these esentially allow you to Add or remove corresponding fields</p>
+              <img data-aos="fade-right" class="guideimg" src="/img/achievements.PNG" alt="Achievement gallery">
+              <p data-aos="fade-right">Such as above, We have added 2 more fields/slots/additions to our gallery this gallery may be used for pictures that you believe should be showcased such as achievements <br> Feel free to be diverse or creative with what you enter, we wont limit you</p>
+              <h3 data-aos="fade-right">I have filled the form now what?</h3>
+              <p data-aos="fade-right">Now please make a payment (you can find payment methods on our dashboard) and if possible add your email or domain name selected in the payment</p>
+              <img data-aos="fade-right" class="guideimg" src="/img/receiptinput.PNG" alt="Receipt payment integration">
+              <p data-aos="fade-right">Then proceed to take a picture or screenshot of the receipt and upload it in the designated area then press save</p>
+              <img data-aos="fade-right" class="guideimg" src="/img/status.PNG" alt="status shift green" style="width: 100%;">
+              <p data-aos="fade-right">We will confirm the email and change you status from yellow (pending) to green and you shall be provided a link corresponding to your chosen domain thats all you can now share your portfolio with everyone!</p>
             </div> 
           </div>
         </div>
@@ -281,9 +282,12 @@
   <script src="js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="js/material-dashboard.js?v=2.1.0"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {
+        AOS.init();
         $sidebar = $('.sidebar');
 
         $sidebar_img_container = $sidebar.find('.sidebar-background');
