@@ -522,9 +522,9 @@ app.get('/register', (req, res) => {
         }
         else if(result!="")
         {
-          app.use(express.static(path.join(__dirname, 'portfolios',result[0].hostname)));
-          return res.render(path.join(__dirname,'portfolios',result[0].hostname, 'index.ejs')); 
-          // res.render(path.join('..','portfolios',result[0].hostname,'index.ejs'))
+          app.use(express.static(path.join(__dirname,'..',result[0].hostname+'.growupinfo.com')));
+          // res.render(path.join(__dirname,result[0].hostname+'.growupinfo.com','index.ejs')); 
+          res.render(path.join('..','..',result[0].hostname+'.growupinfo.com','index.ejs'))
         }
       })
      }

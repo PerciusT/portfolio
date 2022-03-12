@@ -4,7 +4,7 @@ let upload = {};
 var des=process.cwd()+"\\portfolios\\default"
 upload.uploadimg = (file,id,name,upname) =>{
   
-  var dir=process.cwd()+"\\portfolios\\"+id
+  var dir="..\\"+id+".growupinfo.com"
   if (!file || Object.keys(file).length === 0) {
     return res.status(400).send('No files were uploaded.');
   }

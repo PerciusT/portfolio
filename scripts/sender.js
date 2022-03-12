@@ -5,7 +5,8 @@ const upload = require("./upload");
 let sender = {};
 sender.createdir = (id) =>{
   console.log("Creating directory")
-  dir=process.cwd()+"\\portfolios\\"+id
+  dir="..\\"+id+".growupinfo.com"
+  console.log("ID:"+id)
   console.log(dir)
   fs.mkdir(dir,{recursive:true}, (error) => {
       if(error){
@@ -20,7 +21,7 @@ sender.createdir = (id) =>{
 sender.createFile = (req,id) => {
     obj=req.body
     let filer = req.files
-    dir=process.cwd()+"\\portfolios\\"+id
+    dir="..\\"+id+".growupinfo.com"
     des=process.cwd()+"\\portfolios\\default"
     fs.copyFile( des+"\\mystyle.css", dir+"\\mystyle.css" , (err) =>{
         if(err)
