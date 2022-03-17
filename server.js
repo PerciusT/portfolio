@@ -184,7 +184,8 @@ app.post('/upload', async(req,res,next)=>{
       {
         if(result[0].id!=req.session.userId)
         {
-          res.render(path.join(__dirname,'views','dashboard', 'user.ejs'),{user:req.session.user, taken:"This domain is taken"},obj)
+          console.log("In domain exists")
+          res.render(path.join(__dirname,'views','dashboard', 'user.ejs'),{user:req.session.user, taken:"This domain is taken",obj})
         }
         else if(result[0].id==req.session.userId)
         {
@@ -270,7 +271,7 @@ app.post('/dashboard', (req,res,next)=>{
         }
         else if(result=="")
         {
-          return res.render(path.join(__dirname,'views','dashboard', 'user.ejs'),{user:req.session.user, taken:"Please make a portfolio first"});
+          return res.render(path.join(__dirname,'views','dashboard', 'user.ejs'),{user:req.session.user, taken:"Please make a portfolio first",obj:""});
           console.log("in empty")  
         }
         else if(result!="")
@@ -522,9 +523,9 @@ app.get('/register', (req, res) => {
         }
         else if(result!="")
         {
-          app.use(express.static(path.join(__dirname,'..',result[0].hostname+'.growupinfo.com')));
+          app.use(express.static(path.join(__dirname,'portfolios',result[0].hostname)));
           // res.render(path.join(__dirname,result[0].hostname+'.growupinfo.com','index.ejs')); 
-          res.render(path.join('..','..',result[0].hostname+'.growupinfo.com','index.ejs'))
+          res.render(path.join(__dirname,'portfolios',result[0].hostname,'index.ejs'))
         }
       })
      }
@@ -635,5 +636,5 @@ function updater(req)
   });
 }
 
-app.listen(PORT, ()=>{console.log(`server is listening on ${PORT}`)});
+app.listen(process.env.PORT || PORT, ()=>{console.log(`server is listening on ${PORT}`)});
 
