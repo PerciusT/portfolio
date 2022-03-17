@@ -1,10 +1,11 @@
 const fileUpload = require('express-fileupload');
+const path = require("path");
 let upload = {};
 
-var des=process.cwd()+"\\portfolios\\default"
+var des=path.join(process.cwd(),"portfolios","default")
 upload.uploadimg = (file,id,name,upname) =>{
   
-  var dir="..\\"+id+".growupinfo.com"
+  var dir=path.join(process.cwd(),"portfolios",id)
   if (!file || Object.keys(file).length === 0) {
     return res.status(400).send('No files were uploaded.');
   }
@@ -13,7 +14,7 @@ upload.uploadimg = (file,id,name,upname) =>{
   if(upname)
   {
     console.log(upname)
-    upname.mv(dir+"\\images\\"+name, function(err){
+    upname.mv(path.join(dir,"images",name), function(err){
     if(err)
     {
       console.log(err)

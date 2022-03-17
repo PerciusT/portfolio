@@ -1,11 +1,12 @@
 const fs = require('fs')
 const fileUpload = require('express-fileupload');
 const fse = require('fs-extra')
+const path = require("path");
 const upload = require("./upload");
 let sender = {};
 sender.createdir = (id) =>{
   console.log("Creating directory")
-  dir="..\\"+id+".growupinfo.com"
+  dir=path.join(process.cwd(),"portfolios",id)
   console.log("ID:"+id)
   console.log(dir)
   fs.mkdir(dir,{recursive:true}, (error) => {
@@ -21,15 +22,15 @@ sender.createdir = (id) =>{
 sender.createFile = (req,id) => {
     obj=req.body
     let filer = req.files
-    dir="..\\"+id+".growupinfo.com"
-    des=process.cwd()+"\\portfolios\\default"
-    fs.copyFile( des+"\\mystyle.css", dir+"\\mystyle.css" , (err) =>{
+    dir=path.join(process.cwd(),"portfolios",id)
+    des=path.join(process.cwd(),"portfolios","default")
+    fs.copyFile(path.join(des,"mystyle.css"), path.join(dir,"mystyle.css") , (err) =>{
         if(err)
         {
             console.log(err)
         }
     })
-    fse.copy(des+"\\images", dir+"\\images",{ overwrite: false, errorOnExist: false }, function (err) {
+    fse.copy(path.join(des,"images"), path.join(dir,"images"),{ overwrite: false, errorOnExist: false }, function (err) {
         if (err) return console.error(err)
         console.log('success! copied images over!')
         
@@ -371,8 +372,8 @@ sender.createFile = (req,id) => {
               <div class="timeline-img-header img-fluid" style="background-image: url(images/xp`+exp+`.jpg); ">
                 <h2>`+obj['exptitle'+exp]+`</h2>
               </div>
-              <div class="date">`+obj.xpdate2+`</div>
-              <p style="color: #000000;">`+obj.exp2+`<br><br></p>
+              <div class="date">`+obj['xpdate'+exp]+`</div>
+              <p style="color: #000000;">`+obj['exp'+exp]+`<br><br></p>
             </div>
           </div>` 
         }
@@ -737,18 +738,18 @@ sender.createFile = (req,id) => {
     </body>
     
     </html>`
-    fse.copy(des+"\\styles", dir+"\\styles", function (err) {
+    fse.copy(path.join(des,"styles"), path.join(dir,"styles"), function (err) {
         if (err) return console.error(err)
         console.log('success! copied styles')
     });
-    fs.writeFile(dir+"\\index.ejs", html, err => {
+    fs.writeFile(path.join(dir,"index.ejs"), html, err => {
     if (err) {
      return console.error(err) 
     }
     console.log("done writing html")
 
     })
-    fs.writeFile(dir+"\\index.html", html, err => {
+    fs.writeFile(path.join(dir,"index.html"), html, err => {
     if (err) {
      return console.error(err) 
     }
