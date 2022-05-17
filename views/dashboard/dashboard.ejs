@@ -18,8 +18,44 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- CSS Just for demo purpose, don't include it in your project -->
 </head>
-
+<script>
+    var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?49650';
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url;
+    var options = {
+  "enabled":true,
+  "chatButtonSetting":{
+      "backgroundColor":"#4dc247",
+      "ctaText":"",
+      "borderRadius":"25",
+      "marginLeft":"0",
+      "marginBottom":"50",
+      "marginRight":"50",
+      "position":"right"
+  },
+  "brandSetting":{
+      "brandName":"Growup Tech Solutions",
+      "brandSubTitle":"Contact our support",
+      "brandImg":"http://growupinfo.com/assets/images/logo-icon.jpeg",
+      "welcomeText":"Hi there!\nHow can I help you?",
+      "messageText":"Hello, I have a question about growup portfolio",
+      "backgroundColor":"#0a5f54",
+      "ctaText":"Start Chat",
+      "borderRadius":"25",
+      "autoShow":false,
+      "phoneNumber":"923365453183"
+  }
+};
+    s.onload = function() {
+        CreateWhatsappChatWidget(options);
+    };
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+</script>
 <body class="dark-edition">
+  
   <div class="wrapper ">
     <div class="sidebar" data-color="green" data-background-color="black" data-image="img/sidebar-2.jpg">
       <!--
@@ -28,7 +64,7 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo"><a href="" class="simple-text logo-normal">
-          <span style="color:green">GrowUp</span>  <br> Portfolio
+          <span style="color:#08E93C">GrowUp</span>  <br> Portfolio
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
@@ -88,7 +124,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
+            <a class="navbar-brand mobchange" href="javascript:void(0)">Dashboard</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
             <span class="sr-only">Toggle navigation</span>
@@ -134,11 +170,15 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-xl-12 col-lg-12">
+              
               <div class="card card-chart">
-                <div class="<%= statuscolor %> card-header sizeincreaser">
+                <a href="/preview">
+                <div class="<%= statuscolor %> card-header sizeincreaser" style="    width: 100%;
+    height: 80px;">
                   <!-- <div class="ct-chart" id="dailySalesChart"></div> -->
-                  <button  class="app-form-button"><a href="/preview" style="font-size: 36px;">Click to Preview</a></button> 
+                  <button  class="app-form-button" style="font-size: 36px; color:white">Click to Preview</button> 
                 </div>
+                </a>
                 <div class="card-body inliner">
                   <h2 class="card-title" id="statustitle">Status</h2>
                   <h2 class="greener" id="sitestatus" ><%= status %></h2>
@@ -147,37 +187,40 @@
                 
                 <div class="card-footer">
                   
-                  <div class="stats">
-                   <div class="screen">
+                  <div class="stats" style="width: 100%;">
+                   <div class="screen" style="width: 99%;">
                      <div class="screen-header">
                          
                            <div class="app-form">
-                             <h4>Enter a Screenshot of your receipt</h4>
-                             <br>
+                             <h4>Enter a Screenshot of your payment proof</h4>
                            </div>
-                          <div class="righter" style="margin-left:50px;">
-                            <form method="post" action="/dashboard"  encType="multipart/form-data">
+                          <div class="righter"">
+                            <form method="post" action="/dashboard"  encType="multipart/form-data" class="formButton">
                               <input class="app-form-control inputfile" type="file" id="receipt" name="receipt" accept=".jpg,.jpeg,.png"> 
-                              <label for="receipt" class="labelreceipt"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg> <span>Upload your receipt</span></label>
+                              <label for="receipt" class="labelreceipt mobdown"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg> <span>Upload</span></label>
+                              <img style="" class="previewimg dashimg" id="receipt1" src="#" alt="">
                               <br>
                               <button  class="app-form-button">Save</button>
                             </form>
                           </div>
 
                      </div>
-                      <h3 style="color:#AAAAAA; margin-left: 20px;" data-aos="fade-right"><B>Payment info</B></h3>
-                      <p class="paymentinfo" style="color:#AAAAAA; margin-left: 40px;" data-aos="fade-right"></p>
-                      <h5 style="color:#AAAAAA; margin-left: 20px;" data-aos="fade-right"><b>Phone# for easy paisa:</b> </h5>
-                      <p class="paymentinfo" style="color:#AAAAAA; margin-left: 40px;" data-aos="fade-right">0336929428<br><br><img src="img/qr.jpg" alt="" class="imgpayment"></p>
+                     
+                      <h3 style="color:#AAAAAA; margin-left: 20px; width: 100%;" data-aos="fade-right"><B>Payment info</B></h3>
+                      <p class="paymentinfo" style="color:#AAAAca; margin-left: 40px;" data-aos="fade-right"></p>
+                      <h5 style="color:#AAAAAA; margin-left: 20px; line-height: 0px; margin-top: 10px;" data-aos="fade-right"><b>Easy paisa:</b> </h5>
+                      <img src="img/easypaisa.png" alt="" class="inliner" style="width: 2%; margin-left: 20px; margin-top: 0px; padding-top: 0px; margin-bottom: 10px;" data-aos="fade-right">
+                      <p class="paymentinfo" style="color:#AAAAca; margin-left: 40px;" data-aos="fade-right">0336929428<br><img src="img/qr.jpg" alt="" class="imgpayment"></p>
+                      <h5 style="color:#AAAAAA; margin-left: 20px; line-height: 0px; margin-top: 10px; " data-aos="fade-right"><b>Jazz Cash</b></h5>
+                      <img src="img/jazzcash.png" alt="" class="inliner" style="width: 2%; margin-left: 20px; margin-bottom: 10px;" data-aos="fade-right">
+                      <p class="paymentinfo" style="color:#AAAAca; margin-left: 40px; " data-aos="fade-right">03369294248</p>
                       <h5 style="color:#AAAAAA; margin-left: 20px;" data-aos="fade-right"><b>HBL bank account#</b></h5>
-                      <p class="paymentinfo" style="color:#AAAAAA; margin-left: 40px;" data-aos="fade-right"> PK28 HABB 002717901642003 MUHAMMAD SHAHMIR KHAN</p>
-                      <h5 style="color:#AAAAAA; margin-left: 20px;" data-aos="fade-right"><b>Phone# for technical support:</b></h5>
-                      <p class="paymentinfo" style="color:#AAAAAA; margin-left: 40px;" data-aos="fade-right"> 03365453183<p>
-                      <h5 style="color:#AAAAAA; margin-left: 20px;" data-aos="fade-right"><b>For in person payment</b></h5>
-                      <p class="paymentinfo" style="color:#AAAAAA; margin-left: 40px;" data-aos="fade-right"> Islamabad, <br>H9, National University of Modern Languages Ibn Rushd Block,<br> Bicon, C/O Syed Mubashir Hassan/Muhammad Shahmir Khan<p>
-                      <div style="width: 100%; text-align: center;" data-aos="fade-right">
-                        <img src="img/payment.png" alt="allowed payment methods" class="imgpay">
-                      </div>
+                      <p class="paymentinfo" style="color:#AAAAca; margin-left: 40px;" data-aos="fade-right"> PK28 HABB 002717901642003 MUHAMMAD SHAHMIR KHAN</p>
+                      <h5 style="color:#AAAAAA; margin-left: 20px;" data-aos="fade-right"><b>Technical support:</b></h5>
+                      <p class="paymentinfo" style="color:#AAAAca; margin-left: 40px;" data-aos="fade-right"> 03365453183<p>
+                      <!-- <div style="width: 100%; text-align: center;" data-aos="fade-right">
+                        <img src="img/.png" alt="allowed payment methods" class="imgpay">
+                      </div> -->
                   </div>
                   
 
@@ -597,14 +640,14 @@
                 </a>
               </li>
               <li>
-                <a href="http://growupinfo.com/about">
+                <a href="http://growupinfo.com/index.html#about">
                   About Us
                 </a>
               </li>
               <li>
               </li>
               <li>
-                <a href="http://growupinfo.com/privacy">
+                <a href="http://growupinfo.com/Privacy.html">
                   Licenses
                 </a>
               </li>
@@ -612,7 +655,7 @@
           </nav>
           <div class="copyright float-right" id="date">
             , made with <i class="material-icons">favorite</i> by
-            <a href="" target="_blank">GrowUp Tech Solutions</a>.
+            <a href="http://growupinfo.com" target="_blank">GrowUp Tech Solutions</a>.
           </div>
         </div>
       </footer>
@@ -701,6 +744,7 @@
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="js/material-dashboard.js?v=2.1.0"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/counter.js"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {

@@ -14,15 +14,54 @@
     <link rel="stylesheet" href="css/registeration.css">
     <link rel="stylesheet" href="css/regstyle.css">
 </head>
-<body>
-
+<script>
+    var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?49650';
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url;
+    var options = {
+  "enabled":true,
+  "chatButtonSetting":{
+      "backgroundColor":"#4dc247",
+      "ctaText":"",
+      "borderRadius":"25",
+      "marginLeft":"0",
+      "marginBottom":"50",
+      "marginRight":"50",
+      "position":"right"
+  },
+  "brandSetting":{
+      "brandName":"Growup Tech Solutions",
+      "brandSubTitle":"Contact our support",
+      "brandImg":"http://growupinfo.com/assets/images/logo-icon.jpeg",
+      "welcomeText":"Hi there!\nHow can I help you?",
+      "messageText":"Hello, I have a question about growup portfolio",
+      "backgroundColor":"#0a5f54",
+      "ctaText":"Start Chat",
+      "borderRadius":"25",
+      "autoShow":false,
+      "phoneNumber":"923365453183"
+  }
+};
+    s.onload = function() {
+        CreateWhatsappChatWidget(options);
+    };
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+</script>
+<body class="img">
     <div class="main">
 
         <!-- Sign up form -->
         <section class="signup">
+            <h3 style="text-align: center; width: 100%; font-size: 26px;" class="topdown growreg"> <span style="font-size: 38px;">G</span>rowup <span style="font-size: 38px;">P</span>ortfolio</h3>
             <div class="container">
+
                 <div class="signup-content">
+
                     <div class="signup-form">
+
                         <h2 class="form-title">Sign up</h2>
                         <form method="POST" class="register-form" id="register-form">
                             <div class="form-group">
@@ -43,7 +82,7 @@
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term"/>
-                                <label for="agree-term" id="label-agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                                <label for="agree-term" id="label-agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="http://growupinfo.com/Privacy.html" class="term-service">Terms of service</a></label>
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
@@ -52,7 +91,7 @@
                         </form>
                     </div>
                     <div class="signup-image">
-                        <figure><img src="images/signup-image.png" alt="sing up image"></figure>
+                        <figure><img class="vectorImage" src="images/signup-image.png" alt="sing up image"></figure>
                         <a href="/login" class="signup-image-link"><h3>I am already member</h3></a>
                     </div>
                 </div>

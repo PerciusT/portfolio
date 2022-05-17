@@ -19,7 +19,14 @@
 *::after {
   box-sizing: border-box;
 }
-
+.framePrev
+{
+  width: 120%; height: 140%; margin:0px;
+}
+.dashimg
+{
+  width: 3%; height: 3%;
+}
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -1001,11 +1008,11 @@ pre code {
     max-width: 540px;
   }
 }
-
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
   }
+
 }
 
 @media (min-width: 992px) {
@@ -2273,7 +2280,11 @@ pre code {
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
   }
-
+  .framePrev
+  {
+    width: 100%;
+    height: 120%;
+  }
   .table-responsive-md>.table-bordered {
     border: 0;
   }
@@ -2287,7 +2298,11 @@ pre code {
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
   }
-
+  .framePrev
+  {
+    width: 100%;
+    height: 120%;
+  }
   .table-responsive-lg>.table-bordered {
     border: 0;
   }
@@ -2301,7 +2316,11 @@ pre code {
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
   }
-
+  .framePrev
+  {
+    width: 100%;
+    height: 120%;
+  }
   .table-responsive-xl>.table-bordered {
     border: 0;
   }
@@ -5199,7 +5218,7 @@ tbody.collapse.show {
 .alert-dismissible .close {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 90%;
   padding: 0.75rem 1.25rem;
   color: inherit;
 }
@@ -20531,7 +20550,7 @@ Copyright (c) 2015 Daniel Eden
   animation: heartbeat 1s infinite;
   -webkit-background-clip: text;
   background-clip: text;
-  background-image: linear-gradient(60deg, #7b1fa2, #913f9e);
+  background-image: linear-gradient(60deg, #288c6c, #4ea752);
   color: transparent;
 }
 
@@ -22127,7 +22146,7 @@ border-radius: 10px;
 }
 
 .screen-header {
-  display: flex;
+  /*display: flex;*/
   align-items: center;
   padding: 10px 20px;
   background: #161A2B;
@@ -22248,7 +22267,7 @@ border-radius: 10px;
 .app-form-button {
   background: none;
   border: none;
-  color: #ea1d6f;
+  color: #08E93C;
   font-size: 24px;
   cursor: pointer;
   outline: none;
@@ -22342,18 +22361,22 @@ border-radius: 10px;
   padding-bottom: 0px;
  height: 15px;
  width: 50px;
-  font-size: 28px;
-  color: #f17ef7;
+  font-size: 35px;
 
   
 }
+.backgroundImg{
+  margin-top: 50px;
+}
 .plussign 
 {
+  color: #97bc62ff;
   padding: 0px 5px;
   margin-right: 10px;
 }
 .minussign
 {
+  font-size: 40px;
   color: #e94b3cff;
   padding: 0px 7px 0px;
   margin-bottom: 0px;
@@ -22418,32 +22441,39 @@ label
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #9c27b0; 
+  background: #288c6c; 
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #9c3fff; 
+  background: #4ea752; 
 }
 .footer 
 {
-  margin-top: 15rem;
+  margin-top: 5rem;
 }
 .drpmenu
 {
   background-color: inherit;
 }
 .labelreceipt {
-    width: 15vw;
+    width: 8vw;
     font-size: 1rem;
     font-weight: 700;
-    text-overflow: ellipsis;
+    /*text-overflow: ellipsis;*/
     white-space: nowrap;
     cursor: pointer;
     display: inline-block;
     overflow: hidden;
-    padding: 0.625rem 1.25rem;
+    padding: 0.625rem 1rem;
+    /*border-color: 100%;*/
+}
+.mobdown
+{
+  /*display: block;*/
+  width: 10vw;
+      border-radius: 5px;
 }
 .inputfile {
     width: 0.1px;
@@ -22454,7 +22484,14 @@ label
     z-index: -1;
 }
 .labelreceipt{
-    background-color: #a3394c;
+    background-image: linear-gradient(60deg, #288c6c, #4ea752);
+    /*color: black;*/
+    color: white;
+}
+.usersizer
+{
+      border-radius: 5px;
+  width: 80%;
 }
 .paymentinfo
 {
@@ -22473,4 +22510,47 @@ label
 {
   width: 90%;
   height: auto;
+}
+.previewimg
+{
+  width: 10%;
+  height:  10%;
+  position: relative;
+  bottom: 30px;
+}
+.dashimg
+{
+  width: 5%; height: 5%;
+}
+@media (max-width: 768px)
+{
+  .mobdown
+  {
+    width: 50%;
+  }
+  .mobchange:after
+  {
+    content: " GrowUp Portfolio";
+    color: #08E93C;
+  }
+  .dashimg
+  {
+    width: 15%; height: 15%;
+  }
+}
+
+.screen 
+{
+  background-image: linear-gradient(to right, #1E2035 , #202940);
+}
+.screen-header 
+{
+  background-image: linear-gradient(to right, #161A2B , #202940);
+  
+}
+.wa-chat-box-poweredby
+{
+  display: none;
+  visibility: hidden;
+  position: absolute;
 }

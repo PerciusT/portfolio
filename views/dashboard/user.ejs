@@ -17,8 +17,44 @@
   <link href="css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
 </head>
-
+<script>
+    var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?49650';
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url;
+    var options = {
+  "enabled":true,
+  "chatButtonSetting":{
+      "backgroundColor":"#4dc247",
+      "ctaText":"",
+      "borderRadius":"25",
+      "marginLeft":"0",
+      "marginBottom":"50",
+      "marginRight":"50",
+      "position":"right"
+  },
+  "brandSetting":{
+      "brandName":"Growup Tech Solutions",
+      "brandSubTitle":"Contact our support",
+      "brandImg":"http://growupinfo.com/assets/images/logo-icon.jpeg",
+      "welcomeText":"Hi there!\nHow can I help you?",
+      "messageText":"Hello, I have a question about growup portfolio",
+      "backgroundColor":"#0a5f54",
+      "ctaText":"Start Chat",
+      "borderRadius":"25",
+      "autoShow":false,
+      "phoneNumber":"923365453183"
+  }
+};
+    s.onload = function() {
+        CreateWhatsappChatWidget(options);
+    };
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+</script>
 <body class="dark-edition">
+  
   <div class="wrapper ">
     <div class="sidebar" data-color="green" data-background-color="black" data-image="img/sidebar-2.jpg">
       <!--
@@ -27,7 +63,7 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo"><a href="" class="simple-text logo-normal">
-        <span style="color:green;">GrowUp</span> <br> Portfolio
+        <span style="color:#08E93C;">GrowUp</span> <br> Portfolio
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
@@ -88,7 +124,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
+            <a class="navbar-brand mobchange" href="javascript:void(0)">Profile</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
             <span class="sr-only">Toggle navigation</span>
@@ -131,7 +167,7 @@
           <div class="background">
   <div class="container">
     <div class="screen">
-      <div class="screen-header">
+      <!-- <div class="screen-header">
         <div class="screen-header-left">
           <div class="screen-header-button close"></div>
           <div class="screen-header-button maximize"></div>
@@ -142,20 +178,31 @@
           <div class="screen-header-ellipsis"></div>
           <div class="screen-header-ellipsis"></div>
         </div>
-      </div>
+      </div> -->
       <div class="screen-body">
         <div class="screen-body-item">
           <form method="post" action="/upload"  encType="multipart/form-data">
             <h3>Enter your data here, do note that clicking save updates each field to the value it contains</h3>
             <div class="app-form">
+              <div class="app-form-group message">
+                <label for="">A picture of you <span style="color:red;">*</span></label>
+                <br>
+                <div class="righters inlineru" style="width:13rem;">
+                      <input class="inputfile" type="file" id="avatar" name="avatar" accept=".jpg,.jpeg,.png" class="app-form-control" placeholder="Avatar" required>
+                      <label for="avatar" class="labelreceipt usersizer"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg> <span>Avatar*</span></label>
+                      <img class="previewimg" id="avatar1" src="#" alt="">
+                      <br>
+                    </div>
+                
+              </div>
               <div class="app-form-group">
-                <input class="app-form-control" name="name" placeholder="Name Required* first time only" value="<%= obj.name %>" maxlength="30" required>
-                <input class="app-form-control" name="domainhost" placeholder="Preferred domain name ( www.example.growupinfo.com) Required* first time only" value="<%= obj.domainhost %>" maxlength="30" required>
+                <input class="app-form-control" name="name" placeholder="Name*" value="<%= obj.name %>" maxlength="30" required>
+                <input class="app-form-control" name="domainhost" placeholder="Domain* (www.example.growupinfo.com) " value="<%= obj.domainhost %>" maxlength="30" required>
                 <h5 style="color:white" id="taken"><%= taken %></h5>
               </div>
               <br>
               <br>
-              <label for="postsuser">Your designations/catch phrases <span style="color:red;">Required what is your designation (first time only)</span></label>
+              <label for="postsuser">Your designations/catch phrases <span style="color:red;">Designation*</span></label>
               <div class="app-form-group" id="postsuser">
                 <input class="app-form-control inlineru" name="post" placeholder="Whats your designation*" maxlength="30" value="<%= obj.post %>" required>
                 <input class="app-form-control inlineru" name="post2" value="<%= obj.post2 %>" placeholder="What you do " maxlength="30">
@@ -188,7 +235,7 @@
               <br>
               <br>
               <div class="spacer">
-                <label for="skilluser">Your Skills <span style="color:red;">Required atleast 1 (first time only)</span></label>
+                <label for="skilluser">Your Skills <span style="color:red;">*</span></label>
                 <div>
                   <label> Add/Remove Skill</label>
                   <p class="plusminus inlineru"><span class="plussign" id="skplus">+</span><span class="minussign" id="skminus">-</span></p >
@@ -221,16 +268,19 @@
               <br>
               <label for="educationuser">Your Education</label>
               <div class="app-form-group">
-                <input class="app-form-control inliners" name="matric" value="<%= obj.matric %>"  placeholder="School and chosen specialization?" maxlength="30">
-                <input class="app-form-control inliners" name="date" value="<%= obj.date %>"  placeholder="Time duration" maxlength="30" id="educationuser">
+                <input class="app-form-control inlineru" name="matric" value="<%= obj.matric %>"  placeholder="Institute" maxlength="30">
+                <input class="app-form-control inlineru" name="date" value="<%= obj.date %>"  placeholder="Time duration" maxlength="30" id="educationuser">
+                <input class="app-form-control inlineru" name="eduTitlem" value="<%= obj.eduTitlem %>"  placeholder="Title" maxlength="30" id="educationuser">
               </div>
               <div class="app-form-group">
-                <input class="app-form-control inliners" name="fsc" value="<%= obj.fsc %>"  placeholder="College and chosen specialization?" maxlength="30">
-                <input class="app-form-control inliners" name="date2" value="<%= obj.date2 %>"  placeholder="Time duration" maxlength="30">
+                <input class="app-form-control inlineru" name="fsc" value="<%= obj.fsc %>"  placeholder="Institute" maxlength="30">
+                <input class="app-form-control inlineru" name="date2" value="<%= obj.date2 %>"  placeholder="Time duration" maxlength="30">
+                <input class="app-form-control inlineru" name="eduTitlef" value="<%= obj.eduTitlef %>"  placeholder="Title" maxlength="30" id="educationuser">
               </div>
               <div class="app-form-group">
-                <input class="app-form-control inliners" name="uni" value="<%= obj.uni %>"  placeholder="University (if any) and specialization?" maxlength="30">
-                <input class="app-form-control inliners" name="date3" value="<%= obj.date3 %>"  placeholder="Time duration" maxlength="30">
+                <input class="app-form-control inlineru" name="uni" value="<%= obj.uni %>"  placeholder="Institute" maxlength="30">
+                <input class="app-form-control inlineru" name="date3" value="<%= obj.date3 %>"  placeholder="Time duration" maxlength="30">
+                <input class="app-form-control inlineru" name="eduTitleu" value="<%= obj.eduTitleu %>"  placeholder="Title" maxlength="30" id="educationuser">
               </div>
               <br>
               <br>
@@ -249,9 +299,10 @@
                     <input class="app-form-control" name="exp1" value="<%= obj.exp1 %>"  placeholder="A bit about your xp">
                     <input class="app-form-control inlineru" name="exptitle1" value="<%= obj.exptitle1 %>"  placeholder="Company title">       
                     <input class="app-form-control inlineru" name="xpdate1" value="<%= obj.xpdate1 %>"  placeholder="Time duration" maxlength="30">
-                    <div class="righters inlineru" style="margin-left:50px; ">
+                    <div class="righters inlineru" style="margin-left:0px; ">
                       <input class="app-form-control inputfile " type="file" id="exp1img" name="exp1img" accept=".jpg,.jpeg,.png" placeholder="Background for xp">
-                      <label for="exp1img" class="labelreceipt usersizer"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg> <span>Background</span></label>
+                      <label for="exp1img" class="labelreceipt usersizer backgroundImg"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg> <span>Background</span></label>
+                      <img class="previewimg" id="exp1img1" src="#" alt="">
                       <br>
                     </div>
                   </div>
@@ -289,10 +340,11 @@
                   <input class="app-form-control inlineru remover" type="number" value="<%= obj.countach %>"  name="countach" id="countach" placeholder="" maxlength="3" readonly hidden> 
                   </div>
                 </div>
-                <div id="achsec">
+                <div id="achsec" style="width: 70%;">
                   <div class="righter" id="achitem1">
                       <input class="app-form-control inputfile" type="file" id="achuser1" name="achieve1img" accept=".jpg,.jpeg,.png" placeholder="Achievement">
                       <label for="achuser1" class="labelreceipt usersizer"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg> <span>Achievement 1</span></label>
+                      <img class="previewimg" id="achuser11" src="#" alt="">
                       <br>
                     </div>
                 </div>
@@ -300,16 +352,7 @@
                   <input class="app-form-control" type="file" id="avatar" name="achieve3img" accept=".jpg,.jpeg,.png" placeholder="Background for xp">
                   <input class="app-form-control" type="file" id="avatar" name="achieve4img" accept=".jpg,.jpeg,.png" placeholder="Background for xp"> -->
               </div>
-              <div class="app-form-group message">
-                <label for="">A picture of you <span style="color:red;">Required everytime</span></label>
-                <br>
-                <div class="righters inlineru" style="width:13rem;">
-                      <input class="inputfile" type="file" id="avatar" name="avatar" accept=".jpg,.jpeg,.png" class="app-form-control" placeholder="Avatar" required>
-                      <label for="avatar" class="labelreceipt usersizer"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg> <span>Avatar</span></label>
-                      <br>
-                    </div>
-                
-              </div>
+              
               
             </div>
             <div class="app-form-group buttons">
@@ -324,29 +367,29 @@
        <div style="width: 100%; height: 300px; margin:0px;">
               <h3>Preview click save to see changes, </h3>
               <h5>Do note the preview may look different to the actual product, please open preview from dashboard to see it properly</h5>
-                <iframe style="width: 100%; height: 120%; margin:0px;" src="/preview" title="Preview"></iframe>
+                <iframe style="" class="framePrev" src="/preview" title="Preview"></iframe>
               </div>
             </div>
       </div>
       </section>
-      <footer class="footer">
+      <footer class="footer" style="margin-top: 15rem;">
         <div class="container-fluid">
           <nav class="float-left">
             <ul>
               <li>
-                <a href="GrowUpinfo.com">
-                  <span style="color:green;">GrowUp</span> Tech Solutions
+                <a href="http://growupinfo.com/">
+                 <span style="color:green">GrowUp</span> Portfolio
                 </a>
               </li>
               <li>
-                <a href="GrowUpinfo.com/about">
+                <a href="http://growupinfo.com/index.html#about">
                   About Us
                 </a>
               </li>
               <li>
               </li>
               <li>
-                <a href="GrowUpinfo.com/privacy">
+                <a href="http://growupinfo.com/Privacy.html">
                   Licenses
                 </a>
               </li>
@@ -354,7 +397,7 @@
           </nav>
           <div class="copyright float-right" id="date">
             , made with <i class="material-icons">favorite</i> by
-            <a href="" target="_blank">GrowUp Tech Solutions</a>.
+            <a href="http://growupinfo.com" target="_blank">GrowUp Tech Solutions</a>.
           </div>
         </div>
       </footer>

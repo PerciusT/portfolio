@@ -24,9 +24,10 @@ $(document).ready(function() {
                   <input class="app-form-control" name="exp`+ski+`" placeholder="edit your xp">
                   <input class="app-form-control inlineru" name="exptitle`+ski+`" placeholder="Company title">       
                   <input class="app-form-control inlineru" name="xpdate`+ski+`" placeholder="Time duration" maxlength="30">
-                 <div class="righter inlineru" style="margin-left:50px; ">
+                 <div class="righter inlineru" ">
                               <input class="app-form-control inputfile " type="file" id="exp`+ski+`img" name="exp`+ski+`img" accept=".jpg,.jpeg,.png" placeholder="Background for xp">
-                              <label for="exp`+ski+`img" class="labelreceipt usersizer"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg> <span>Background</span></label>
+                              <label for="exp`+ski+`img" class="labelreceipt usersizer backgroundImg"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg> <span>Background</span></label>
+                              <img class="previewimg" id="exp`+ski+`img`+ski+`" src="#" alt="">
                               <br>
                           </div>
                 </div>`)
@@ -35,7 +36,8 @@ $(document).ready(function() {
 	{
 		$('#achsec').append(`<div class="righter" id="achitem`+ski+`">
                       <input class="app-form-control inputfile" type="file" id="achuser`+ski+`" name="achieve`+ski+`img" accept=".jpg,.jpeg,.png" placeholder="Achievement">
-                      <label for="exp`+ski+`img" class="labelreceipt usersizer"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg> <span>Achievement `+ski+`</span></label>
+                      <label for="achuser`+ski+`" class="labelreceipt usersizer"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg> <span>Achievement `+ski+`</span></label>
+                      <img class="previewimg" id="achuser`+ski+``+ski+`" src="#" alt="">
                       <br>
                     </div>`)
         
@@ -66,12 +68,16 @@ $(document).ready(function() {
                   <input class="app-form-control" name="exp`+j+`" placeholder="Add an experience">
                   <input class="app-form-control inlineru" name="exptitle`+j+`" placeholder="Company title">       
                   <input class="app-form-control inlineru" name="xpdate`+j+`" placeholder="Time duration" maxlength="30">
-                 <div class="righters inlineru" style="margin-left:50px; ">
+                 <div class="righters inlineru">
                               <input class="app-form-control inputfile " type="file" id="exp`+j+`img" name="exp`+j+`img" accept=".jpg,.jpeg,.png" placeholder="Background for xp">
-                              <label for="exp`+j+`img" class="labelreceipt usersizer"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg> <span>Background</span></label>
+                              <label for="exp`+j+`img" class="labelreceipt usersizer backgroundImg"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg> <span>Background</span></label>
+                              <img class="previewimg" id="exp`+j+`img`+j+`" src="#" alt="">
                               <br>
                           </div>
                 </div>`)
+		$("#exp"+j+"img").change(function() {
+      		readURL(this);
+    	});
         $('#countxp').val(j)
 	})
 	
@@ -91,8 +97,12 @@ $(document).ready(function() {
 		$('#achsec').append(`<div class="righter" id="achitem`+k+`">
                       <input class="app-form-control inputfile" type="file" id="achuser`+k+`" name="achieve`+k+`img" accept=".jpg,.jpeg,.png" placeholder="Achievement">
                       <label for="achuser`+k+`" class="labelreceipt usersizer"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg> <span>Achievement `+k+`</span></label>
+                      <img class="previewimg" id="achuser`+k+``+k+`" src="#" alt="">
                       <br>
                     </div>`)
+		$("#achuser"+k).change(function() {
+      		readURL(this);
+    	});
         $('#countach').val(k)
 	})
 	
@@ -106,5 +116,28 @@ $(document).ready(function() {
 			$('#countxp').val(k)
 		}
 	})
+	function readURL(input) {
+		
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+          var id=input.id.match(/(\d+)/)
+          // console.log(input.id+id[1])
+          if(id==null)
+          {
+          	id=[1,1]
+          }
+        reader.onload = function(e) {
+        	console.log(input.id)
+          $("#"+input.id+id[1]).attr('src', e.target.result);
+        }
+        
+        reader.readAsDataURL(input.files[0]); // convert to base64 string
+      }
+    }
+    $(".inputfile").change(function() {
+    	console.log(this)
+      readURL(this);
+    });
 
 })

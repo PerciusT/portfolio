@@ -34,8 +34,6 @@ const options ={
 const pool = mysql.createPool(options);
 
 
-
-
 app.use(favicon(__dirname + '/public/favicon.ico'));
 const  sessionStore = new mysqlStore(options);
 app.use(bodyParser.urlencoded({
@@ -523,7 +521,7 @@ app.get('/register', (req, res) => {
         }
         else if(result!="")
         {
-          app.use(express.static(path.join(__dirname,'portfolios',result[0].hostname)));
+          app.use(express.static(path.join(__dirname,'portfolios')));
           // res.render(path.join(__dirname,result[0].hostname+'.growupinfo.com','index.ejs')); 
           res.render(path.join(__dirname,'portfolios',result[0].hostname,'index.ejs'))
         }

@@ -6,50 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="icon" type="favicon" href="images/favicon.png">
 	<link rel="stylesheet" href="css/logstyle.css">
 
 	</head>
-	<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
+	<script>
+    var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?49650';
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url;
+    var options = {
+  "enabled":true,
+  "chatButtonSetting":{
+      "backgroundColor":"#4dc247",
+      "ctaText":"",
+      "borderRadius":"25",
+      "marginLeft":"0",
+      "marginBottom":"50",
+      "marginRight":"50",
+      "position":"right"
+  },
+  "brandSetting":{
+      "brandName":"Growup Tech Solutions",
+      "brandSubTitle":"Contact our support",
+      "brandImg":"http://growupinfo.com/assets/images/logo-icon.jpeg",
+      "welcomeText":"Hi there!\nHow can I help you?",
+      "messageText":"Hello, I have a question about growup portfolio",
+      "backgroundColor":"#0a5f54",
+      "ctaText":"Start Chat",
+      "borderRadius":"25",
+      "autoShow":false,
+      "phoneNumber":"923365453183"
+  }
+};
+    s.onload = function() {
+        CreateWhatsappChatWidget(options);
+    }
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);	
+</script>
+	<body class="img js-fullheight">
 	<section class="ftco-section">
 		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Login</h2>
+			<h4 class="companyHead"> <span style="font-size: 38px;">G</span>rowUp <span style="font-size: 38px;">P</span>ortfolio</h4>
+			<div class="signup-content">
+
+				<div class="signup-form">
+					<div class="row justify-content-center">
+						<div class="col-md-12 col-lg-8">
+							<div class="login-wrap p-0">
+				      	<h3 class="mb-4 text-center" id="texttop"><%= wrongpass %></h3>
+				      	<form action="/userlogin" method="post" class="signin-form" id="loginform" >
+				      		<div class="form-group">
+				      			<input type="email" name="name" class="form-control" placeholder=" Email" id="username" required>
+				      		</div>
+	  		          <div class="form-group">
+	  		            <input id="password-field" name="pass" type="password" class="form-control" placeholder=" Password" required>
+	  		            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+	  		          </div>
+	  		          <div class="form-group">
+	  		          	<button type="submit" id="btnlogin" class="form-control btn btn-primary submit px-3">Sign In</button>
+	  		          </div>
+	  		          <div class="form-group d-md-flex">
+	  		          	<div class="w-50">
+				            	<label class="checkbox-wrap checkbox-primary">Remember Me
+											  <input type="checkbox" checked>
+											  <span class="checkmark"></span>
+											</label>
+											<a href="/register">Create account</a>
+										</div>
+	  		          </div>
+	  		        </form>
+				      </div>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-6 col-lg-4">
-					<div class="login-wrap p-0">
-		      	<h3 class="mb-4 text-center" id="texttop"><%= wrongpass %></h3>
-		      	<form action="/userlogin" method="post" class="signin-form" id="loginform" >
-		      		<div class="form-group">
-		      			<input type="email" name="name" class="form-control" placeholder=" Email" id="username" required>
-		      		</div>
-	            <div class="form-group">
-	              <input id="password-field" name="pass" type="password" class="form-control" placeholder=" Password" required>
-	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-	            </div>
-	            <div class="form-group">
-	            	<button type="submit" id="btnlogin" class="form-control btn btn-primary submit px-3">Sign In</button>
-	            </div>
-	            <div class="form-group d-md-flex">
-	            	<div class="w-50">
-		            	<label class="checkbox-wrap checkbox-primary">Remember Me
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
-									</label>
-									<a href="/register">Not a user? Click here</a>
-								</div>
-	            </div>
-	          </form>
-		      </div>
-				</div>
+				<iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
 			</div>
 		</div>
-		<iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
 	</section>
 
 	<script src="js/jquery.min.js"></script>

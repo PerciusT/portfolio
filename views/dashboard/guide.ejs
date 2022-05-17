@@ -23,8 +23,44 @@
   </style>
   <!-- CSS Just for demo purpose, don't include it in your project -->
 </head>
-
+<script>
+    var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?49650';
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url;
+    var options = {
+  "enabled":true,
+  "chatButtonSetting":{
+      "backgroundColor":"#4dc247",
+      "ctaText":"",
+      "borderRadius":"25",
+      "marginLeft":"0",
+      "marginBottom":"50",
+      "marginRight":"50",
+      "position":"right"
+  },
+  "brandSetting":{
+      "brandName":"Growup Tech Solutions",
+      "brandSubTitle":"Contact our support",
+      "brandImg":"http://growupinfo.com/assets/images/logo-icon.jpeg",
+      "welcomeText":"Hi there!\nHow can I help you?",
+      "messageText":"Hello, I have a question about growup portfolio",
+      "backgroundColor":"#0a5f54",
+      "ctaText":"Start Chat",
+      "borderRadius":"25",
+      "autoShow":false,
+      "phoneNumber":"923365453183"
+  }
+};
+    s.onload = function() {
+        CreateWhatsappChatWidget(options);
+    };
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+</script>
 <body class="dark-edition">
+  
   <div class="wrapper ">
     <div class="sidebar" data-color="green" data-background-color="black" data-image="img/sidebar-2.jpg">
       <!--
@@ -33,7 +69,7 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo"><a href="" class="simple-text logo-normal">
-          <span style="color:green">GrowUp</span>  <br> Portfolio
+          <span style="color:#08E93C;">GrowUp</span>  <br> Portfolio
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
@@ -93,7 +129,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
+            <a class="navbar-brand mobchange" href="javascript:void(0)">Guide</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
             <span class="sr-only">Toggle navigation</span>
@@ -138,6 +174,12 @@
             <div class="col-xl-12 col-lg-12" style="color:lightgrey" data-aos="fade-right">
               <h2 data-aos="fade-right">Hello welcome to GrowUp portfolio</h2>
               <h3 data-aos="fade-right">How it shall work</h3>
+              <div style="align-items: center; width: 100%;">
+                <video width="480" height="360" controls>
+                <source src="https://www.youtube.com/watch?v=7dV4Qw8qdsA" type="video/mp4">
+                You browser does not support video tag
+              </div>
+              
               <p data-aos="fade-right">We made this simple guide to show you how to get your own online portfolio! <br> You have already registered, and probably see no Preview yet, this is because you have no made a portfolio yet</p>
               <img src="/img/userprofile.PNG" class="" alt="userprofile" data-aos="fade-right">
               <p data-aos="fade-right">You can make a portfolio by clicking on User profile on the top left corner <br> Now you will see a form First lets discuss how to fill the form</p>
@@ -177,14 +219,14 @@
                 </a>
               </li>
               <li>
-                <a href="http://growupinfo.com/about">
+                <a href="http://growupinfo.com/index.html#about">
                   About Us
                 </a>
               </li>
               <li>
               </li>
               <li>
-                <a href="http://growupinfo.com/privacy">
+                <a href="http://growupinfo.com/Privacy.html">
                   Licenses
                 </a>
               </li>
